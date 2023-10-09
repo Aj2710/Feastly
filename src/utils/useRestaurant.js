@@ -27,7 +27,7 @@ const useRestaurant = () => {
        
         const arrayOfCards = json.data.cards;
         setCarousel(arrayOfCards[0].card.card.imageGridCards.info);
-        setItemCarousel(arrayOfCards[1].card.card.imageGridCards.info)
+        setItemCarousel(arrayOfCards[1].card.card.imageGridCards.info);
         const restaurant_list = "restaurant_grid_listing";
         
         for( const cardObj of arrayOfCards ){
