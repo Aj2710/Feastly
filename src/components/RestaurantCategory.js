@@ -1,8 +1,10 @@
 import React from "react";
 import ItemList from "./ItemList";
+import ComponentWrapper from "./ComponentWrapper";
 
 const RestaurantCategory = ({ data, showList, setShowIndex }) => {
   return (
+    
     <div className="flex justify-between p-3 my-1 border-b-8 hover:cursor-pointer  flex-col">
       <div
         className="flex justify-between"

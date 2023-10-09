@@ -15,9 +15,10 @@ const RestaurantCard = ({ resInfo }) => {
   const path = "/restaurant/" + id;
 
   return (
+    
     <Link to={path}>
       <div className="p-2.5 m-2 w-72">
-        <div className="p-3  rounded-md shadow-lg shadow-stone-300 hover:border hover:hover:scale-[1.01] hover:cursor-pointer ">
+        <div className="p-3 rounded-md shadow-lg shadow-stone-300 hover:border transition-transform transform hover:scale-95 hover:cursor-pointer ">
           <img
             className="rounded-lg object-contain bg-white"
             src={IMG_URL + cloudinaryImageId}

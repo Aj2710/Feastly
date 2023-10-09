@@ -1,8 +1,11 @@
 import React from 'react'
+import ComponentWrapper from './ComponentWrapper'
 
 const Login = () => {
   return (
-    <div>Login</div>
+    <ComponentWrapper>
+      <div>Login</div>
+    </ComponentWrapper>  
   )
 }
 

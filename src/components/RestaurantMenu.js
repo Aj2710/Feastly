@@ -2,6 +2,7 @@ import React from "react";
 import { useState } from "react";
 import RestaurantCategory from "./RestaurantCategory";
 import useRestaurantMenu from "../utils/useRestaurantMenu";
+import ComponentWrapper from "./ComponentWrapper";
 
 const RestaurantMenu = () => {
   const restaurant = useRestaurantMenu();
@@ -26,6 +27,7 @@ const RestaurantMenu = () => {
   });
 
   return (
+    <ComponentWrapper>
     <div className="flex flex-col mx-auto w-[50vw]">
       <div className="flex justify-between p-4 mt-2 border-b-2">
         <div className="flex flex-col">
@@ -61,6 +63,7 @@ const RestaurantMenu = () => {
         })}
       </div>
     </div>
+    </ComponentWrapper>
   );
 };
 

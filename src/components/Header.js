@@ -25,7 +25,7 @@ const Header = () => {
               to="/cart"
               className="flex items-center justify-center gap-2 font-medium text-base"
             >
-              <i className="fa-solid fa-cart-shopping"></i>Cart(
+              <i className="fa-solid fa-cart-shopping"></i>(
               {cartItems.length})
             </Link>
           </li>
@@ -34,7 +34,7 @@ const Header = () => {
               to="/login"
               className="flex items-center justify-center gap-2 font-medium text-base"
             >
-              <i class="fa-solid fa-user"></i>Login
+              <i class="fa-solid fa-user"></i>
             </Link>
           </li>
         </ul>
