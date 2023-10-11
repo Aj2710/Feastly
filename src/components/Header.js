@@ -34,7 +34,7 @@ const Header = () => {
               to="/login"
               className="flex items-center justify-center gap-2 font-medium text-base"
             >
-              <i class="fa-solid fa-user"></i>
+              Login
             </Link>
           </li>
         </ul>

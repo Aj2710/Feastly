@@ -9,6 +9,7 @@ const useRestaurant = () => {
     let[filteredList , setFilteredList] = useState([]);
     const[carousel , setCarousel] = useState([]);
     const[itemCarousel , setItemCarousel] = useState([]);
+    const [restaurantCarousel,setRestaurantCarousel] = useState([]);
 
     useEffect(()=>{
         fetchData()
@@ -26,12 +27,13 @@ const useRestaurant = () => {
         }
        
         const arrayOfCards = json.data.cards;
+       
         setCarousel(arrayOfCards[0].card.card.imageGridCards.info);
         setItemCarousel(arrayOfCards[1].card.card.imageGridCards.info);
-        const restaurant_list = "restaurant_grid_listing";
-        
+        setRestaurantCarousel(arrayOfCards[2]?.card?.card?.gridElements?.infoWithStyle?.restaurants);
+
         for( const cardObj of arrayOfCards ){
-          
+            const restaurant_list = "restaurant_grid_listing";
             if (cardObj.card.card && cardObj.card.card.id ===
             restaurant_list) {
             const resData = cardObj.card?.card?.gridElements?.infoWithStyle?.restaurants;
@@ -50,7 +52,7 @@ const useRestaurant = () => {
         setFilteredList(filteredList);
     }
 
-    return {carousel , itemCarousel ,filteredList , searchIt};
+    return {carousel , itemCarousel ,filteredList , searchIt ,restaurantCarousel};
 
 }
 

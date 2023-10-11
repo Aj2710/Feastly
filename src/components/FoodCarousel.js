@@ -1,11 +1,9 @@
-import React from 'react';
-
-import { IMG_URL } from '../utils/constants';
+import React from 'react'
 import Carousel from 'react-multi-carousel';
 import 'react-multi-carousel/lib/styles.css';
+import { CAROUSEL_IMG_URL, IMG_URL } from '../utils/constants';
 
-const FoodCarousel = ({carousel}) => {
-  // console.log(carousel.data.info[0].id)
+const ItemCarousel = ({carousel}) => {
   const responsive = {
     superLargeDesktop: {
       // the naming can be any, depends on you.
@@ -14,7 +12,7 @@ const FoodCarousel = ({carousel}) => {
     },
     desktop: {
       breakpoint: { max: 3000, min: 1024 },
-      items: 2.3
+      items: 3
     },
     tablet: {
       breakpoint: { max: 1024, min: 464 },
@@ -27,23 +25,22 @@ const FoodCarousel = ({carousel}) => {
   };
 
   return (
-    <div className='px-10'>
-      <h2 className='font-bold text-2xl py-2'>Best offers for you</h2>
-        <div className='m-2 flex'>
-            {
-                carousel.map((data)=>{
-                    return (
-                        <div key={data.id} className='px-2 cursor-pointer'>
-                            <img src={IMG_URL + data.imageId} alt="carousel-img"
-                            className=" object-cover rounded-3xl"></img>
-                        </div>
-                    )
-                })
-            }
-            
-        </div>
+    <div>
+      <h1 className='text-2xl font-bold my-4'>Best offers for you</h1>
+        <Carousel responsive={responsive}>
+          {
+            carousel.map((item)=>{
+              return (
+                    <div className='px-2 cursor-pointer '>               
+                      <img src={IMG_URL + item.imageId} alt='carousel-img' className= "object-contain rounded-3xl"></img>
+                    </div>   
+                  
+              )
+          })
+          }
+        </Carousel>
     </div>
-    )
-};
+  )
+}
 
-export default FoodCarousel;
+export default ItemCarousel

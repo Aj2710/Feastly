@@ -43,10 +43,16 @@ const cartSlice = createSlice({
         return sum;
       }, 0);
     },
+    decrementCounter:(state , action)=>{     
+        const index = state.allItems.findIndex(
+          (item) => item.card.info.id === action.payload.card.info.id
+        );
+        state.allItems.splice(index, 1);      
+    }
   },
 });
 
-export const { addItems, removeItems, clearCart, setTotalAmount } =
+export const { addItems, removeItems, clearCart, setTotalAmount ,decrementCounter} =
   cartSlice.actions;
 
 export default cartSlice.reducer;

@@ -18,7 +18,7 @@ const RestaurantCard = ({ resInfo }) => {
     
     <Link to={path}>
       <div className="p-2.5 m-2 w-72">
-        <div className="p-3 rounded-md shadow-lg shadow-stone-300 hover:border transition-transform transform hover:scale-95 hover:cursor-pointer ">
+        <div className="p-3 rounded-md shadow-lg shadow-stone-300 hover:border transition-transform transform hover:scale-[1.03] duration-300 hover:cursor-pointer ">
           <img
             className="rounded-lg object-contain bg-white"
             src={IMG_URL + cloudinaryImageId}
@@ -26,7 +26,7 @@ const RestaurantCard = ({ resInfo }) => {
           ></img>
           <h3 className="text-lg font-bold line-clamp-1 ">{name}</h3>
           <h5 className="font-light text-sm line-clamp-1">
-            {cuisines.join(" ,")}
+            {cuisines.join(",")}
           </h5>
           <h5 className="font-light text-sm">{areaName}</h5>
           <span className="flex mt-2 justify-between text-xs font-bold">

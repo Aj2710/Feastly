@@ -6,6 +6,8 @@ export const IMG_URL = 'https://res.cloudinary.com/swiggy/image/upload/fl_lossy,
 
 export const CAROUSEL_IMG_URL = 'https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_288,h_360/'
 
+
+
 export const FETCH_RES_MENU_URL_FIRST_PART = "https://corsproxy.io/?https://www.swiggy.com/dapi/menu/pl?page-type=REGULAR_MENU&complete-menu=true&lat=25.4358011&lng=81.846311&restaurantId=";;
 
 export const FETCH_RES_MENU_URL_SECOND_PART = "&submitAction=ENTER";

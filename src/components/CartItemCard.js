@@ -3,7 +3,7 @@ import { IMG_URL } from '../utils/constants'
 import { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { removeItems } from '../utils/cartSlice';
-import { addItems, setTotalAmount } from '../utils/cartSlice';
+import { addItems, setTotalAmount ,decrementCounter } from '../utils/cartSlice';
 
 
 const CartItemCard = ({item}) => {
@@ -23,10 +23,14 @@ const CartItemCard = ({item}) => {
         addFoodItem(item);
     }
 
-    const decrementCount=()=>{
+    const decrementCount=(item)=>{
         if(itemCount > 1){
             setItemCount(itemCount - 1);
+            dispatch(decrementCounter(item));
+            dispatch(setTotalAmount());
         }
+        
+        
     }
 
     const removeFoodItem = (item)=>{
@@ -51,7 +55,7 @@ const CartItemCard = ({item}) => {
             <div className='text-lg font-semibold w-full mb-1'>₹{price/100 || defaultPrice}<span className='text-sm text-slate-600 font-normal m-1'>({`${price/100} x ${itemCount}`})</span></div>
             <div className='flex justify-between  '>
                 <div className='flex item-center'>
-                    <button onClick={decrementCount} className='bg-orange-500 text-white font-bold w-8 h-8 rounded-md'>-</button>
+                    <button onClick={()=>decrementCount(item)} className='bg-orange-500 text-white font-bold w-8 h-8 rounded-md'>-</button>
                     <div className='font-bold w-8 h-8 flex justify-center items-center'>{itemCount}</div>
                     <button onClick={()=>IncrementCount(item)} className='bg-orange-500 text-white font-bold w-8 h-8 rounded-md'>+</button>
                 </div>
